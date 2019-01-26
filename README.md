@@ -13,7 +13,7 @@
 
 ## Viewing Project
 <ul>
-<li>Clone this repository</li>
+<li>Clone this repository.</li>
 <li>Open <code>index.html</code></li>
 </ul>
 
