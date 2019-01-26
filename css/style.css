@@ -1,0 +1,45 @@
+body {
+background-color: #ffe4b2;
+color:#000;
+font-family: 'Markazi Text', serif;
+}
+
+h1 {
+font-size:30px;
+font-family: 'Indie Flower', cursive;
+}
+
+#searchbar {
+width:260px;
+max-height:500px;
+border:solid 2px #000;
+overflow:hidden;
+}
+
+.main-nav {
+color:#000;
+text-align:left;
+font-size:22px;
+}
+
+li {
+cursor:pointer;
+color: black;
+margin: .4em 0;
+}
+
+li:hover {
+color:#FFF;
+}
+
+#map {
+width:100%;
+height:98vh;
+top:0;
+bottom:0;
+}
+
+h4{
+font-size:15px; 
+
+}

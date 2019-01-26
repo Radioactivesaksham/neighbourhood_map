@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>All About Bali</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Work+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+
+      </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-3">
+               <div class="row site-header">
+                  <div class="col-md-12">
+                     <header class="">
+                        <h1>Places of Interest in BALI Indonesia.</h1>
+                        <form>
+                           <div class="form-group">
+                              <label for="searchbar"></label>
+                              <input type="text" name="searchbar" id="searchbar" class="form-control" data-bind="value: searchText, valueUpdate: 'afterkeydown', event: {keyup: filterList}" placeholder="Name">
+                           </div>
+                        </form>
+                     </header>
+                  </div>
+               </div>
+               <div>
+                  <ul data-bind="foreach: mapArray" class="main-nav">
+                     <li class="main-nav-item col-md-12 col-sm-6" data-bind="css: {active: selected},text: title, click: $parent.setSelected, visible:show"></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-9">
+               <div class="row">
+                  <div class="col-sm-12" id="map"></div>
+                  <div id="map-error">
+                     <h4 data-bind="text: errorDisplay"></h4>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h4></h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/knockout.js"></script>
+      <script src="js/app.js"></script>
+      <script>
+         var map, infoWindow;
+         
+         function initMap() {
+             map = new google.maps.Map(
+                 document.getElementById('map'), {
+                     center: {
+                         lat: -8.670458199999999,
+                         lng: 115.2126293
+                     },
+                     zoom: 9,
+                     mapTypeControl: false
+                 }
+             );
+             infowindow = new google.maps.InfoWindow();
+         
+             ko.applyBindings(new model());
+         }
+         
+         function mapError() {
+             document.getElementById('map-error').innerHTML = "Map Error!";
+         }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRwPIIF_IzuencGrOivHlrpVVWQ39H-tI&callback=initMap" onerror="mapError()" async defer></script>
+   </body>
+</html>
