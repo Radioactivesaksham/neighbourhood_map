@@ -1,6 +1,6 @@
 ## Neighbourhood Map
  
- This is project project 2 of my Udacity FullStack Nanodegree Part 2. The main pupose of this project is to get hands on experience on:
+ This is project project 2 of my Udacity FullStack Nanodegree Part 2. The main pupose of this project is to a get hands on experience on:
  <ul>
  <li>jQuery</li>
  <li>bootstrap.js</li>
